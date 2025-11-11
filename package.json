@@ -2,6 +2,7 @@
   "name": "customer-support",
   "private": true,
   "version": "0.0.0",
+  "homepage": "https://github.com/monir-codes/Customer-Support-Zone",
   "type": "module",
   "scripts": {
     "dev": "vite",
