@@ -1,7 +1,9 @@
 import React from "react";
 import Vector from "../../../assets/vector1.png"
 
-const Banner = ()=>{
+const Banner = ({cardClicks})=>{
+
+
     return (
      <div className="bg-[#E9E9E9] p-6">
         <div className="max-w-[1300px] flex flex-col md:flex-row   mx-auto my-10 gap-5">
@@ -10,7 +12,7 @@ const Banner = ()=>{
                  <img className="w-[40%] h-[100%] md:h-auto md:w-[40%]" src={Vector} alt="" />
             <div className="text-center">
              <h4 className="text-sm md:text-1xl text-white">In-Progress</h4>
-                <h2 className="font-semibold text-4xl md:text-4xl mt-2 text-white">0</h2>
+                <h2 className="font-semibold text-4xl md:text-4xl mt-2 text-white">{cardClicks.length}</h2>
             </div>
                  <img className="w-[40%] h-[100%] md:h-auto md:w-[40%] transform scale-x-[-1]" src={Vector} alt="" />
 
