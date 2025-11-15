@@ -1,7 +1,7 @@
 import React from "react";
 import Vector from "../../../assets/vector1.png"
 
-const Banner = ({cardClicks})=>{
+const Banner = ({cardClicks, resolved, setResolved})=>{
 
 
     return (
@@ -23,7 +23,7 @@ const Banner = ({cardClicks})=>{
                  <img className="w-[40%] h-[100%] md:h-auto md:w-[40%]" src={Vector} alt="" />
             <div className="text-center">
              <h4 className="text-sm md:text-1xl text-white">Resolved</h4>
-                <h2 className="font-semibold text-4xl md:text-4xl mt-2 text-white">0</h2>
+                <h2 className="font-semibold text-4xl md:text-4xl mt-2 text-white">{resolved.length}</h2>
             </div>
                  <img className="w-[40%] h-[100%] md:h-auto md:w-[40%] transform scale-x-[-1]" src={Vector} alt="" />
 

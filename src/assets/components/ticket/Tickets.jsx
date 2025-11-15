@@ -1,7 +1,7 @@
 import React, { use, useState} from "react";
 import Tasks from "./Tasks.jsx"
-import toast from "daisyui/components/toast/index.js";
-const Tickets = ({infoProm, cardClicks, setCardClick}) => {
+import { toast } from "react-toastify";
+const Tickets = ({infoProm, cardClicks, setCardClick, setResolved, resolved}) => {
 
   const infoPromData = use(infoProm)
   const [tickets, setTickets] = useState(infoPromData)
@@ -9,7 +9,7 @@ const Tickets = ({infoProm, cardClicks, setCardClick}) => {
   const handleRemove = (ticket)=>{
   setCardClick([...cardClicks,ticket.title])
   setTickets(tickets.filter(t => t.id !== ticket.id))
-  toast("done")
+  toast("Ticket In-Progress !!")
   }
 
 
@@ -20,9 +20,9 @@ const Tickets = ({infoProm, cardClicks, setCardClick}) => {
     <div className="grid grid-cols-1 md:grid-cols-3 bg-[#E9E9E9] px-4">
       
 
-      <div className="grid grid-cols-1 md:grid-cols-2 md:col-span-2">
+      <div className="grid grid-cols-1 md:grid-cols-2 md:col-span-2 mb-10">
       {
-           tickets.map(ticket => <div className=" p-4 ">
+           tickets.map(ticket => <div className=" p-2 ">
       <div onClick={()=> handleRemove(ticket)} className="ticket mx-auto w-auto ">
         <div className=" bg-white p-4 w-[80vw] md:w-auto rounded-sm mx-auto ">
           <div className="flex justify-between items-center gap-2">
@@ -63,10 +63,10 @@ const Tickets = ({infoProm, cardClicks, setCardClick}) => {
   )
 }
       </div>
-    <div className=" -mt-7">
+    <div className=" -mt-6">
 
     
-      <Tasks cardClicks={cardClicks}></Tasks>
+      <Tasks cardClicks={cardClicks} resolved={resolved} setResolved={setResolved} setCardClick={setCardClick}></Tasks>
     </div>
   </div>
 
