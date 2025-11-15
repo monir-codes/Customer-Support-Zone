@@ -1,4 +1,4 @@
-## React Basic Questions & Answers
+## Questions & Answers
 
 ### 1. What is JSX, and why is it used?
 JSX is a syntax that lets us write HTML inside JavaScript. It is used because it makes React components easier to write and understand.
